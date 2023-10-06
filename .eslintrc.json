@@ -1,3 +1,15 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "plugins": [
+    "unused-imports", "prettier"
+  ],
+  "rules": {
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "unused-imports/no-unused-imports": 2,
+    "no-unused-vars": ["error", { "vars": "all", "args": "after-used", "ignoreRestSiblings": false }],
+    "max-len": [2, { "code": 100, "ignoreStrings": true }],
+    "max-lines": [2, { "max": 300, "skipBlankLines": true, "skipComments": true }],
+    "object-curly-spacing": [2, "always", { "arraysInObjects": true }],
+    "quotes": [2, "single", { "allowTemplateLiterals": true }]
+  }
 }
