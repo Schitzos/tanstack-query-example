@@ -1,11 +1,14 @@
 'use client'
 import React from 'react';
-import { ReactQueryContextProvider } from './ReactQueryContext';
+import { ReactQueryContextProvider } from './reactQueryContext';
+import MantineContextProvider from './mantineContext';
 
 export default function ContextProvider({ children }: React.PropsWithChildren) {
   return (
-    <ReactQueryContextProvider>
-      {children}
-    </ReactQueryContextProvider>
+    <MantineContextProvider>
+      <ReactQueryContextProvider>
+        {children}
+      </ReactQueryContextProvider>
+    </MantineContextProvider>
   );
 }
