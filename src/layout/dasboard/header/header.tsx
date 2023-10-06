@@ -4,15 +4,15 @@ import styles from './style.module.scss'
 
 export default function LayoutHeader(){
   return(
-    <AppShell.Header >
+    <AppShell.Header className={styles.headerContainer}>
       <div className={styles.logoContainer}>
-        <div>Logo</div>
+        Econosphere
       </div>
-      <div>
+      <div className={styles.heeaderRight}>
         <div>search</div>
         <div>search</div>
+        <Burger size="sm" />
       </div>
-      <Burger hiddenFrom="sm" size="sm" />
     </AppShell.Header>
 
   )

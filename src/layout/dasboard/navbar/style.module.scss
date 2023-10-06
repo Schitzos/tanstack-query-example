@@ -1,0 +1,18 @@
+@import '@styles/color';
+
+.navContainer{
+    padding-top: 1rem;
+    .navGroup{
+        font-size: .75rem;
+        padding-top: 1rem;
+        .groupName{
+            color:$color-grey;
+            padding-left: 2rem;
+        }
+        .navParent{
+            color:$color-text;
+            padding-left: 2rem;
+        }
+    }
+    
+}

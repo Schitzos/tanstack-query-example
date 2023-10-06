@@ -1,4 +1,4 @@
-import '../styles/globals.css';
+import '../styles/globals.scss';
 import React from 'react';
 import ContextProvider from '../context';
 import '@mantine/core/styles.css';

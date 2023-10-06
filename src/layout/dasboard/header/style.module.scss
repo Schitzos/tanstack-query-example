@@ -1,5 +1,21 @@
-.logoContainer{
-    background-color: red;
-    width: 18.75rem;
-    height: 100%;
+@import '@styles/color';
+
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    .logoContainer{
+        display: flex;
+        width: 18.75rem;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        color: #FFFFFF;
+        background-color: $color-main-primary;
+    }
+    .heeaderRight{
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        padding-right: 1rem;
+    }
 }
