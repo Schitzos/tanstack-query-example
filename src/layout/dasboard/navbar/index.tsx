@@ -7,19 +7,27 @@ export default function LayoutNavbar(){
   const menus = [
     { group:'General',
       parent:[
-        { label:'Event' ,route:'somewhere',icon : iconHome },
-        { label:'Input Data' ,route:'somewhere',icon : iconHome },
-        { label:'Admin Management' ,route:'somewhere',icon : iconHome },
+        { label:'Event' ,route:'#',icon : iconHome },
+        { label:'Input Data' ,route:'#',icon : iconHome },
+        { label:'Admin Management' ,route:'#',icon : iconHome },
       ]
     },
     { group:'Core Simulation',
       parent:[
-        { label:'Dashboard' ,route:'somewhere',icon : iconHome },
-        { label:'Input Data' ,route:'somewhere',icon : iconHome },
-        { label:'Pasar Induk' ,route:'somewhere',icon : iconHome },
-        { label:'Bank' ,route:'somewhere',icon : iconHome },
-        { label:'Pasar Investasi' ,route:'somewhere',icon : iconHome },
-        { label:'Pasar Eksternal' ,route:'somewhere',icon : iconHome },
+        { label:'Dashboard' ,route:'#',icon : iconHome },
+        { label:'Input Data' ,route:'#',icon : iconHome },
+        { label:'Pasar Induk' ,route:'#',icon : iconHome },
+        { label:'Bank' ,route:'#',icon : iconHome },
+        { label:'Pasar Investasi' ,route:'#',icon : iconHome },
+        { label:'Pasar Eksternal' ,route:'#',icon : iconHome },
+      ]
+    },
+    { group:'Menu',
+      parent:[
+        { label:'Client' ,route:'/client',icon : iconHome },
+        { label:'Server' ,route:'/server',icon : iconHome },
+        { label:'React Query Client' ,route:'/react-query/client',icon : iconHome },
+        { label:'React Query Server' ,route:'/react-query/server',icon : iconHome },
       ]
     },
   ]
@@ -37,6 +45,7 @@ export default function LayoutNavbar(){
                     key={parent.label}
                     label={parent.label}
                     leftSection={<parent.icon/>}
+                    href={parent.route}
                   />
                 )
               })}
