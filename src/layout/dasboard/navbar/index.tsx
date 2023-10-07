@@ -22,14 +22,6 @@ export default function LayoutNavbar(){
         { label:'Pasar Eksternal' ,route:'#',icon : iconHome },
       ]
     },
-    { group:'Menu',
-      parent:[
-        { label:'Client' ,route:'/client',icon : iconHome },
-        { label:'Server' ,route:'/server',icon : iconHome },
-        { label:'React Query Client' ,route:'/react-query/client',icon : iconHome },
-        { label:'React Query Server' ,route:'/react-query/server',icon : iconHome },
-      ]
-    },
   ]
   return (
     <AppShell.Navbar className={styles.navContainer }>
