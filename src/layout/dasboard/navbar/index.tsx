@@ -32,7 +32,7 @@ export default function LayoutNavbar(){
     },
   ]
   return (
-    <AppShell.Navbar className={styles.navContainer}>
+    <AppShell.Navbar className={styles.navContainer }>
       {menus.map((menu,index)=>{
         return(
           <div key={menu.group} className={styles.navGroup}>
