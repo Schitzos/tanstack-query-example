@@ -1,9 +1,12 @@
-'use client'; // Error components must be Client Components
+'use client'
+import React, { useEffect } from 'react';
 
-import React from 'react';
-import { useEffect } from 'react';
+interface ErrorProps {
+  error: Error;
+  reset: () => void;
+}
 
-export default function Error({ error, reset }) {
+export default function Error({ error, reset }: ErrorProps) {
   useEffect(() => {
     // Log the error to an error reporting service
     console.error(error);
@@ -13,10 +16,7 @@ export default function Error({ error, reset }) {
     <div>
       <h2>Something went wrong inner error!</h2>
       <button
-        onClick={
-          // Attempt to recover by trying to re-render the segment
-          () => reset()
-        }
+        onClick={() => reset()}
       >
         Try again
       </button>
