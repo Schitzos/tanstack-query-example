@@ -12,6 +12,15 @@
         .navParent{
             color:$color-text;
             padding-left: 2rem;
+            svg{
+                fill:#AAAAAA
+            }
+            &.active{
+                color: $color-primary;
+                svg{
+                    fill: $color-primary;
+                }
+            }
         }
     }
     

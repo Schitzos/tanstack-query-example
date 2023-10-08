@@ -1,8 +1,13 @@
 import { AppShellNavbar, Divider, NavLink } from '@mantine/core';
 import styles from './style.module.scss'
 import iconHome from '@assets/icon/icon-home.svg';
+import { headers } from 'next/headers';
 
 export default function LayoutNavbar(){
+
+  const headersList = headers();
+  const pathname = headersList.get('x-pathname');
+  
   const menus = [
     { group:'General',
       parent:[
@@ -22,6 +27,7 @@ export default function LayoutNavbar(){
       ]
     },
   ]
+  console.log('pathname',pathname)
   return (
     <AppShellNavbar className={styles.navContainer }>
       {menus.map((menu,index)=>{
@@ -32,11 +38,12 @@ export default function LayoutNavbar(){
               {menu.parent.map(parent=>{
                 return(
                   <NavLink
-                    className={styles.navParent}
+                    className={parent.route===pathname?[styles.navParent,styles.active].join(' '):styles.navParent}
                     key={parent.label}
                     label={parent.label}
                     leftSection={<parent.icon/>}
                     href={parent.route}
+                    active={parent.route===pathname}
                   />
                 )
               })}
