@@ -1,7 +1,7 @@
 import { AppShell } from '@mantine/core';
 import LayoutHeader from './header/header';
 import LayoutNavbar from './navbar';
-import LayoutContent from './main';
+import LayoutContent from './content';
 
 export default function DashboardLayout({ children }: React.PropsWithChildren){
   return(

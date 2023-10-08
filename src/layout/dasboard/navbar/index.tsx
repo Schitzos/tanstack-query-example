@@ -1,5 +1,4 @@
-'use client'
-import { AppShell, Divider, NavLink } from '@mantine/core';
+import { AppShellNavbar, Divider, NavLink } from '@mantine/core';
 import styles from './style.module.scss'
 import iconHome from '@assets/icon/icon-home.svg';
 
@@ -7,14 +6,14 @@ export default function LayoutNavbar(){
   const menus = [
     { group:'General',
       parent:[
-        { label:'Event' ,route:'#',icon : iconHome },
-        { label:'Input Data' ,route:'#',icon : iconHome },
-        { label:'Admin Management' ,route:'#',icon : iconHome },
+        { label:'Event' ,route:'/',icon : iconHome },
+        { label:'Input Data' ,route:'/profile',icon : iconHome },
+        { label:'Admin Management' ,route:'/about',icon : iconHome },
       ]
     },
     { group:'Core Simulation',
       parent:[
-        { label:'Dashboard' ,route:'#',icon : iconHome },
+        { label:'Dashboard' ,route:'/post',icon : iconHome },
         { label:'Input Data' ,route:'#',icon : iconHome },
         { label:'Pasar Induk' ,route:'#',icon : iconHome },
         { label:'Bank' ,route:'#',icon : iconHome },
@@ -24,7 +23,7 @@ export default function LayoutNavbar(){
     },
   ]
   return (
-    <AppShell.Navbar className={styles.navContainer }>
+    <AppShellNavbar className={styles.navContainer }>
       {menus.map((menu,index)=>{
         return(
           <div key={menu.group} className={styles.navGroup}>
@@ -46,6 +45,6 @@ export default function LayoutNavbar(){
           </div>
         )
       })}
-    </AppShell.Navbar>
+    </AppShellNavbar>
   )
 }
