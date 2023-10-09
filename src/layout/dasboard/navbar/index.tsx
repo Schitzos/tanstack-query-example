@@ -27,7 +27,6 @@ export default function LayoutNavbar(){
       ]
     },
   ]
-  console.log('pathname',pathname)
   return (
     <AppShellNavbar className={styles.navContainer }>
       {menus.map((menu,index)=>{
