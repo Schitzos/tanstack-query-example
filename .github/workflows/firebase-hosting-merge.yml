@@ -18,7 +18,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_ECONOSPHERE2_V }}'
           channelId: live
           projectId: econosphere2-v
-          target: econosphere-dashboard
+          target: dashboard
           firebaseToolsVersion: 12.4.4
         env:
           FIREBASE_CLI_EXPERIMENTS: webframeworks
