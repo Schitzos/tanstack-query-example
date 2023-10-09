@@ -8,6 +8,7 @@
     ],
     "frameworksBackend": {
       "region": "asia-east1"
-    }
+    },
+    "site": "econosphere-dashboard"
   }
 }
