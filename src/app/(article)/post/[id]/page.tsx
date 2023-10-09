@@ -4,7 +4,7 @@ import ArticleDetail from '@/fragments/article/detail';
 import ArticleComment from '@/fragments/article/comment';
 import React from 'react';
 import { getCommentArticle, getDetailArticle } from '@services/article';
-import RQHydrate from '@components/reactQueryHydrate';
+import RQHydrate from '@/components/elements/reactQueryHydrate';
 import prefetchingQuery from '@utils/prefetchQuery';
 
 interface Params {

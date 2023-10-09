@@ -1,7 +1,7 @@
 import '@mantine/core/styles.css';
 import React from 'react';
 import {  ColorSchemeScript } from '@mantine/core';
-import DashboardLayout from '../layout/dasboard';
+// import DashboardLayout from '../layout/dasboard';
 import ContextProvider from '@/context';
 
 export const metadata = {
@@ -22,9 +22,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <ContextProvider>
-          <DashboardLayout>
-            {children}
-          </DashboardLayout>
+          {/* <DashboardLayout> */}
+          {children}
+          {/* </DashboardLayout> */}
         </ContextProvider>
       </body>
     </html>

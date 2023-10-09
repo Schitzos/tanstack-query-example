@@ -1,6 +1,6 @@
 import { AppShellNavbar, Divider, NavLink } from '@mantine/core';
 import styles from './style.module.scss'
-import iconHome from '@assets/icon/icon-home.svg';
+import iconHome from '@assets/icons/icon-home.svg';
 import { headers } from 'next/headers';
 
 export default function LayoutNavbar(){
@@ -19,7 +19,7 @@ export default function LayoutNavbar(){
     { group:'Core Simulation',
       parent:[
         { label:'Dashboard' ,route:'/post',icon : iconHome },
-        { label:'Input Data' ,route:'#',icon : iconHome },
+        { label:'Input Data' ,route:'/login',icon : iconHome },
         { label:'Pasar Induk' ,route:'#',icon : iconHome },
         { label:'Bank' ,route:'#',icon : iconHome },
         { label:'Pasar Investasi' ,route:'#',icon : iconHome },

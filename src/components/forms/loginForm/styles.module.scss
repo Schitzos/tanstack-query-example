@@ -1,0 +1,16 @@
+@import '@styles/color';
+
+.formContainer{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  .forgetPassword{
+    align-self: flex-end;
+    font-size: .625rem;
+    color: $color-text;
+    margin-top: -1rem;
+  }
+  .btnSubmit{
+    margin-top: 4rem;
+  }
+}

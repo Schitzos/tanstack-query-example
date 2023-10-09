@@ -1,7 +1,7 @@
 import { getArticle } from '@services/article';
 import styles from '@styles/article.module.css';
 import React from 'react';
-import RQHydrate from '@components/reactQueryHydrate';
+import RQHydrate from '@/components/elements/reactQueryHydrate';
 import ListArticle from '@/fragments/article/listArticle';
 import prefetchingQuery from '@utils/prefetchQuery';
 
