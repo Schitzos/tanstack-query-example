@@ -5,7 +5,6 @@ export function middleware(request: NextRequest) {
   let cookie = request.cookies.get('usertoken')
 
   if (!cookie && !request.nextUrl.pathname.startsWith('/auth')) {
-    console.log('here')
     return NextResponse.redirect(new URL('/auth/login', request.url));
   }
   if (cookie && request.nextUrl.pathname==='/auth/login') {
