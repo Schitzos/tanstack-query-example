@@ -6,10 +6,10 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from './validation';
 import { Mutation } from '@/utils/query';
-import { login } from '@/services/auth';
+import { authLogin } from '@/services/auth';
 
 interface FormData {
-  username: string;
+  email: string;
   password: string;
 }
 
@@ -22,7 +22,8 @@ export default function LoginForm() {
     resolver: yupResolver(loginSchema),
   });
 
-  const handleLoginMutation = Mutation(login,()=>{});
+  const handleLoginMutation = Mutation(authLogin,()=>{});
+  
   const handleLoginForm = (formValue: FormData) => {
     handleLoginMutation.mutate(formValue)
   }
@@ -30,10 +31,10 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit(handleLoginForm)} className={styles.formContainer}>
       <TextInput
-        label="Username"
-        placeholder="input your username"
-        error={errors.username?.message}
-        {...register('username')}
+        label="Email"
+        placeholder="input your email"
+        error={errors.email?.message}
+        {...register('email')}
       />
       <PasswordInput
         label="Password"

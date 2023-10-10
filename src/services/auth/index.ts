@@ -1,10 +1,13 @@
 
-export function login() {
+export function authLogin() {
   const options = {
-    url:'https://apidev.econosphere.id/ec2/adminapp/v1/admins/auth/signin',
+    // url:`${process.env.NEXT_PUBLIC_BASE_URL}/admins/auth/signin`,
+    url:`/api/auth/login`,
     method:'POST',
-    headers: {
-      'Content-Type': 'application/json',
+    message:{
+      title:'Welcome',
+      success:'Berhasil login',
+      error:''
     }
   }
 

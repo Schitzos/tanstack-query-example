@@ -1,8 +1,10 @@
 import '@mantine/core/styles.css';
+import '@mantine/notifications/styles.css';
 import React from 'react';
 import {  ColorSchemeScript } from '@mantine/core';
 // import DashboardLayout from '../layout/dasboard';
 import ContextProvider from '@/context';
+import { Notifications } from '@mantine/notifications';
 
 export const metadata = {
   title: 'Mantine Next.js template',
@@ -25,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {/* <DashboardLayout> */}
           {children}
           {/* </DashboardLayout> */}
+          <Notifications />
         </ContextProvider>
       </body>
     </html>

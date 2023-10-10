@@ -14,6 +14,18 @@ const nextConfig = {
     });
     return config;
   },
+  // async rewrites() {
+  //   return [
+  // {
+  //   source: '/api/login',
+  //   destination: `/api/login`,
+  // },
+  // {
+  //   source: '/api/:path*',
+  //   destination: `${process.env.NEXT_PUBLIC_BASE_URL}/:path*`,
+  // },
+  //   ];
+  // },
 }
 
 module.exports = nextConfig

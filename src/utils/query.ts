@@ -1,5 +1,6 @@
 import { useMutation, useQuery } from '@tanstack/react-query';
 import AxiosAdapters from './axiosAdapter';
+import { notifications } from '@mantine/notifications';
 
 interface QueryProps {
   key: string;
@@ -31,12 +32,17 @@ export function Query({ key,fn,options={},callback }:QueryProps) {
 }
 
 export function Mutation(options:any, callback: (() => void) | undefined) {
+  const config = options()
   return useMutation(
     (payload:any) => {
-      return excuteFetch(payload,options());
+      return excuteFetch(payload,config);
     },
     {
       onSuccess: (res) => {
+        notifications.show({
+          title: config.message.title,
+          message: config.message.success,
+        })
         callback && callback();
         return res;
       },
