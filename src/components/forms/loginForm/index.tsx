@@ -7,6 +7,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { loginSchema } from './validation';
 import { Mutation } from '@/utils/query';
 import { authLogin } from '@/services/auth';
+import { useRouter } from 'next/navigation';
 
 interface FormData {
   email: string;
@@ -21,11 +22,16 @@ export default function LoginForm() {
   } = useForm<FormData>({
     resolver: yupResolver(loginSchema),
   });
-
-  const handleLoginMutation = Mutation(authLogin,()=>{});
+  const router = useRouter()
+  const handleLoginMutation = Mutation(authLogin,()=>handleRedirect());
   
   const handleLoginForm = (formValue: FormData) => {
     handleLoginMutation.mutate(formValue)
+  }
+
+  const handleRedirect = ()=>{
+    router.push('/')
+    router.refresh();
   }
 
   return (

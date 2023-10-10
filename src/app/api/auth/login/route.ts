@@ -1,4 +1,5 @@
 import AxiosAdapters from '@/utils/axiosAdapter'
+import { cookies } from 'next/headers'
 
 export async function POST(request:any) {
   const body = await request.json()
@@ -12,6 +13,9 @@ export async function POST(request:any) {
       'Authorization':process.env.NEXT_PUBLIC_BASIC_AUTH,
     },
   }
-  const data = await AxiosAdapters(option)
-  return Response.json(data)
+  const { data } = await AxiosAdapters(option)
+  cookies().set('usertoken', data.token)
+  const modData = data.profile
+  return Response.json(modData)
 }
+
