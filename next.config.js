@@ -22,7 +22,7 @@ const nextConfig = {
   // },
   // {
   //   source: '/api/:path*',
-  //   destination: `${process.env.NEXT_PUBLIC_BASE_URL}/:path*`,
+  //   destination: `${process.env.NEXT_PUBLIC_BASE_API_URL}/:path*`,
   // },
   //   ];
   // },

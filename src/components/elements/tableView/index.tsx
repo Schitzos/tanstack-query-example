@@ -13,7 +13,7 @@ interface TableViewProps {
 
 // Define the TableView component
 export default function TableView({ config, data }: TableViewProps) {
-  const rows = data.map((val, i) => {
+  const rows = data?.map((val, i) => {
     return (
       <TableTr key={i}>
         {config.map((column, idx) => {

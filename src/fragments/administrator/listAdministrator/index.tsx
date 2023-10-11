@@ -1,32 +1,28 @@
 'use client'
 
+import TableView from '@/components/elements/tableView';
 import { getListAdmin } from '@/services/administrator';
 import { Query } from '@utils/query';
 import React from 'react';
 
 export default function LisAdministrator(){  
   const admins = Query({ key:'getListAdmin',fn:getListAdmin });
-  console.log(admins)
   return(
-    // <TableView config={dataTable} data={elements}/>
-    <div>test</div>
+    <TableView config={dataTable} data={admins?.data?.data}/>
   )
 }
 
 const dataTable = [
-  { heading:'Element position',
-    key:'position',
-  },
-  { heading:'Element name',
+  { heading:'Nama',
     key:'name',
   },
-  { heading:'Symbol',
-    key:'symbol',
+  { heading:'Role',
+    key:'role',
   },
-  { heading:'Atomic mass',
-    key:'mass',
+  { heading:'Email',
+    key:'email',
   },
-  { heading:'Option',
-    key:'option',
+  { heading:'Dibuat',
+    key:'createdAt',
   },
 ]

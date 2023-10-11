@@ -10,7 +10,6 @@ export async function getArticle() {
       'auth-type': 'basic',
     }
   }
-
   return AxiosAdapter(options)
 }
 

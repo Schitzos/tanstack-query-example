@@ -3,9 +3,8 @@ import { cookies } from 'next/headers'
 
 export async function POST(request:any) {
   const body = await request.json()
-  // const res = await request
   const option = {
-    url:`${process.env.NEXT_PUBLIC_BASE_URL}/admins/auth/signin`,
+    url:`${process.env.NEXT_PUBLIC_BASE_API_URL}/admins/auth/signin`,
     method:'POST',
     data: body,
     headers: {

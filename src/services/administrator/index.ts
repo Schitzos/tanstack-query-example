@@ -2,7 +2,7 @@ import AxiosAdapter from '@utils/axiosAdapter';
 
 export async function getListAdmin() {
   const options = {
-    url: '/api/admins', // Note that there are no query parameters here
+    url: `/api/admins`,
     headers: {
       'Content-Type': 'application/json',
     },
