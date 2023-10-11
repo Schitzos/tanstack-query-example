@@ -1,0 +1,38 @@
+@import '@styles/color';
+
+.contentContainer{
+  margin-top: 1rem;
+  background-color: rgba(243, 246, 249, 1);
+  width: 100%;
+  position: relative;
+  .breadcrumbsContainer{
+    position: fixed;
+    left: 19.75rem;
+    right: 1rem;
+    display: flex;
+    justify-content: space-between;
+    margin: -1rem -1rem 1rem -1rem;
+    background-color: rgba(0, 175, 240, 0.1);
+    padding: .5rem 1rem;
+    .pageTitle{
+      font-size: 1.125rem;
+      padding: 0;
+      margin: 0;
+      color: $color-primary;
+      font-weight: 500;
+    }
+    .breadcrumbsItem{
+      & >a{
+        font-size: .75rem;
+        color: $color-grey;
+      }
+      & >div{
+        font-size: .75rem;
+        color: $color-primary;
+      }
+    }
+  }  
+  .mainContent{
+    margin-top: 4rem;
+  }
+}

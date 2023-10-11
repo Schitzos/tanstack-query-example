@@ -13,7 +13,7 @@ export default function LayoutNavbar(){
       parent:[
         { label:'Event' ,route:'/',icon : iconHome },
         { label:'Input Data' ,route:'/profile',icon : iconHome },
-        { label:'Admin Management' ,route:'/about',icon : iconHome },
+        { label:'Admin Management' ,route:'/admin',icon : iconHome },
       ]
     },
     { group:'Core Simulation',
