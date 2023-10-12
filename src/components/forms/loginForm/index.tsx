@@ -48,9 +48,6 @@ export default function LoginForm() {
         error={errors.password?.message}
         {...register('password')}
       />
-      <div className={styles.forgetPassword}>
-        Forgot password?
-      </div>
       <Button className={styles.btnSubmit} fullWidth type='submit' disabled={handleLoginMutation.isLoading} >Sign in</Button>
     </form>
   );

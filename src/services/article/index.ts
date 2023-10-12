@@ -13,6 +13,18 @@ export async function getArticle() {
   return AxiosAdapter(options)
 }
 
+export async function getComment() {
+  const options = {
+    url:'https://jsonplaceholder.typicode.com/comments',
+    method:'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      'auth-type': 'basic',
+    }
+  }
+  return AxiosAdapter(options)
+}
+
 export async function getDetailArticle(id:string) {
   const res = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
   if (res.status !== 200) {

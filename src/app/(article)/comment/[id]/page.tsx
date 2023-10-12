@@ -1,11 +1,10 @@
-import { Suspense } from 'react';
 import styles from '@styles/articleDetail.module.css';
-import ArticleDetail from '@/fragments/article/detail';
-import ArticleComment from '@/fragments/article/comment';
 import React from 'react';
 import { getCommentArticle, getDetailArticle } from '@services/article';
 import RQHydrate from '@/components/elements/reactQueryHydrate';
 import prefetchingQuery from '@utils/prefetchQuery';
+import ArticleDetailPrefetch from '@/fragments/article/detailPrefetch';
+import ArticleCommentPrefetch from '@/fragments/article/commentPrefetch';
 
 interface Params {
   id: string;
@@ -13,21 +12,15 @@ interface Params {
 
 export default async function PostId({ params }: { params: Params }) {
   const hydrateQueries = [
-    { key: 'comment-article', fn: () => getCommentArticle(params.id) },
-    { key: 'detail-article', fn: () => getDetailArticle(params.id) },
+    { key: 'getDetailArticlePrefetch', fn: () => getDetailArticle(params.id) },
+    { key: 'getCommentArticlePrefetch', fn: () => getCommentArticle(params.id) },
   ];
   const prefetchedQuery = await prefetchingQuery(hydrateQueries);
-
-  // console.log(prefetchedQuery.queries[0])
   return (
     <RQHydrate state={prefetchedQuery}>
       <div className={styles.main}>
-        <Suspense fallback={<p>Loading article...</p>}>
-          <ArticleDetail id={params.id} />
-        </Suspense>
-        <Suspense fallback={<p>Loading comments...</p>}>
-          <ArticleComment id={params.id} />
-        </Suspense>
+        <ArticleDetailPrefetch id={params.id} />
+        <ArticleCommentPrefetch id={params.id} />
       </div>
     </RQHydrate>
   );

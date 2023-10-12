@@ -1,0 +1,26 @@
+@import '@styles/color';
+
+.container{
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+    .commentContainer{
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+      .commentHead{
+         display: flex;
+         gap:.5rem;
+         align-items: center;
+         .name{
+            color:$color-main-primary;
+            font-size: 1rem;
+         }
+         .email{
+            color: $color-grey;
+            font-size: .75rem;
+            align-self: flex-end;
+         }
+      }
+    }
+}

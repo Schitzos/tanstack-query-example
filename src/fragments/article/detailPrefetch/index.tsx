@@ -4,22 +4,20 @@ import { Query } from '@utils/query';
 import { getDetailArticle } from '@services/article';
 import styles from './style.module.scss';
 import React from 'react';
-import LoadingSpinner from '@/components/elements/loadingSpinner';
+import LoadingSpinnerPrefetch from '@/components/elements/loadingSpinnerPrefetch';
 
 interface ArticleDetailProps {
   id: string;
 }
 
-export default function ArticleDetail({ id }:ArticleDetailProps) {
+export default function ArticleDetailPrefetch({ id }:ArticleDetailProps) {
   const articleDetail = Query({ key:'getDetailArticlePrefetch',fn:()=>getDetailArticle(id) });
-  if(articleDetail.isFetching){
-    return <LoadingSpinner text='Loading detail article..'/>
-  }
   return (
     <div className={styles.container}>
-      <h1>{articleDetail?.data?.title}</h1>
+      {articleDetail.isFetching && <LoadingSpinnerPrefetch text={'matching data detail'}/>}
+      <h1>{articleDetail.data.title}</h1>
       <p>
-        {articleDetail?.data?.body}
+        {articleDetail.data.body}
       </p>
     </div>
   );

@@ -1,5 +1,5 @@
 'use client'
-import { AppShellHeader, Burger } from '@mantine/core';
+import { AppShellHeader } from '@mantine/core';
 import styles from './style.module.scss'
 import { Mutation } from '@/utils/query';
 import { authLogout } from '@/services/auth';
@@ -21,12 +21,10 @@ export default function LayoutHeader(){
   return(
     <AppShellHeader className={styles.headerContainer}>
       <div className={styles.logoContainer}>
-        Econosphere
+        SoldevShare
       </div>
       <div className={styles.heeaderRight}>
-        <div>search</div>
-        <div onClick={()=>handleLogoutForm()}>Logout</div>
-        <Burger size="sm" />
+        <div onClick={()=>handleLogoutForm()} className={styles.logout}>Logout</div>
       </div>
     </AppShellHeader>
 

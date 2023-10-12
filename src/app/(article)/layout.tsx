@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '@styles/article.layout.module.scss'
 
 export const metadata = {
   title: 'Create Next App',
@@ -7,8 +8,7 @@ export const metadata = {
 
 export default function RootLayout({ children }: React.PropsWithChildren) {
   return (
-    <div>
-      <h1>This is Post Layout</h1>
+    <div className={styles.container}>
       {children}
     </div>
   );

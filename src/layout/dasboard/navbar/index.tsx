@@ -11,19 +11,9 @@ export default function LayoutNavbar(){
   const menus = [
     { group:'General',
       parent:[
-        { label:'Event' ,route:'/',icon : iconHome },
-        { label:'Input Data' ,route:'/profile',icon : iconHome },
-        { label:'Admin Management' ,route:'/admin',icon : iconHome },
-      ]
-    },
-    { group:'Core Simulation',
-      parent:[
-        { label:'Dashboard' ,route:'/post',icon : iconHome },
-        { label:'Input Data' ,route:'/login',icon : iconHome },
-        { label:'Pasar Induk' ,route:'#',icon : iconHome },
-        { label:'Bank' ,route:'#',icon : iconHome },
-        { label:'Pasar Investasi' ,route:'#',icon : iconHome },
-        { label:'Pasar Eksternal' ,route:'#',icon : iconHome },
+        { label:'Home' ,route:'/',icon : iconHome },
+        { label:'Query' ,route:'/article',icon : iconHome },
+        { label:'Prefetch' ,route:'/comment',icon : iconHome },
       ]
     },
   ]

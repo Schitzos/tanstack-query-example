@@ -1,0 +1,15 @@
+@import '@styles/color';
+
+.container{
+  display: flex;
+  gap: .25rem;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 100%;
+  p{
+    font-size: .75rem;
+    margin: 0;
+    font-weight: 500;
+    color:$color-grey;
+  }
+}

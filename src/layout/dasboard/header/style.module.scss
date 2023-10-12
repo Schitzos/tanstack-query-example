@@ -18,5 +18,15 @@
         gap: 1rem;
         align-items: center;
         padding-right: 1rem;
+        .logout{
+            color:$color-main-primary;
+            cursor: pointer;
+            &:hover{
+                background-color: $color-main-primary;
+                padding: .5rem;
+                color: white;
+                border-radius: .5rem;
+            }
+        }
     }
 }
