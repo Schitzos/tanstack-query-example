@@ -8,7 +8,7 @@ import { Notifications } from '@mantine/notifications';
 import { cookies } from 'next/headers';
 
 export const metadata = {
-  title: 'Mantine Next.js template',
+  title: 'Soldev Frontend Sharing seesion',
   description: 'I am using Mantine with Next.js!',
 };
 
