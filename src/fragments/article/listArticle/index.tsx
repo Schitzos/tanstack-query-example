@@ -20,7 +20,6 @@ export default function ListArticle(){
   }
   return(
     <div className={styles.container}>
-      {articles?.data?.isFetching && <div>Loading data</div>}
       {articles?.data?.map((article:Article) => {
         return (
           <div className={styles.articleHead} key={article?.id}>

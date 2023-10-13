@@ -11,10 +11,11 @@ interface ArticleDetailProps {
 }
 
 export default function ArticleDetail({ id }:ArticleDetailProps) {
-  const articleDetail = Query({ key:'getDetailArticlePrefetch',fn:()=>getDetailArticle(id) });
+  const articleDetail = Query({ key:'getDetailArticle',fn:()=>getDetailArticle(id) });
   if(articleDetail.isFetching){
     return <LoadingSpinner text='Loading detail article..'/>
   }
+  console.log(articleDetail)
   return (
     <div className={styles.container}>
       <h1>{articleDetail?.data?.title}</h1>
